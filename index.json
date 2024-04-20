@@ -1783,6 +1783,178 @@
                     }
                 }
             }
+        },
+        "/login": {
+            "post": {
+                "summary": "Authentication",
+                "description": "User authentication",
+                "parameters": [
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Authentication request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "description": "Indicates whether the request was successful.",
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful authenticate",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/OAuthClient",
+                                            "description": "Additional information about the response."
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "post": {
+                "summary": "Logout",
+                "description": "User logout",
+                "parameters": [
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful logout",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "default": "User logged out successfully.",
+                                            "example": "User logged out successfully."
+                                        },
+                                        "data": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "default": null,
+                                            "example": null
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/auth": {
+            "get": {
+                "summary": "Retrieve the authenticate user",
+                "description": "Retrieve the details of the authenticate user",
+                "parameters": [
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "nullable": true,
+                                            "default": null,
+                                            "example": null
+                                        },
+                                        "data": {
+                                            "description": "Additional information about the response.",
+                                            "$ref": "#/components/schemas/User"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
