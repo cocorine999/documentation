@@ -19,10 +19,8 @@
                             "description": "Hint rate value"
                         },
                         "unite_mesure_id": {
-                            "description": "The unique identifier of the unite de mesure",
-                            "schema": {
-                                "$ref": "../../schemas/identifier.json#/Identifier"
-                            }
+                            "$ref": "../../schemas/identifier.json#/Identifier",
+                            "description": "The unique identifier of the unite de mesure"
                         }
                     }
                 },
