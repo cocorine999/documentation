@@ -1,9 +1,0 @@
-{
-    "Float": {
-        "type": "number",
-        "format": "float",
-        "example": 1.0,
-        "default": 1.0,
-        "minimum": 0
-    }
-}

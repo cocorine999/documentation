@@ -1,9 +1,0 @@
-{
-    "Integ": {
-        "type": "integer",
-        "format": "integer",
-        "example": 1,
-        "default": 1,
-        "minimum": 0
-    }
-}
