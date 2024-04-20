@@ -2232,7 +2232,7 @@
                 "tags": [
                     "Validate suivi analytique"
                 ],
-                "$ref": "paths/exercices_comptable/operations_comptable_disponible/validate.json"
+                "$ref": "paths/exercices_comptable/operations_analytique/validate.json"
             }
         },
         "/exercices_comptable/{exerciceComptableId}/immobilisations": {
