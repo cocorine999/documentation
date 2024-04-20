@@ -1790,6 +1790,12 @@
         "/employee/{employee_id}": {
             "$ref": "paths/employees/employee.json"
         },
+        "/partners": {
+            "$ref": "paths/partners/partners.json"
+        },
+        "/partners/{partnerId}": {
+            "$ref": "paths/partners/partner.json"
+        },
         "/devises": {
             "get": {
                 "tags": [
