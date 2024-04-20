@@ -1,0 +1,25 @@
+{
+    "Departement": {
+        "type": "object",
+        "required": [
+            "id",
+            "name"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the departement"
+            },
+            "name": {
+                "type": "string",
+                "nullable": false,
+                "default": "Production",
+                "description": "Name of the departement"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the departement was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

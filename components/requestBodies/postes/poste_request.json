@@ -1,0 +1,21 @@
+{
+    "PosteRequest": {
+        "required": [
+            "name",
+            "department_id"
+        ],
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "example": "{{$randomJobType}}",
+                "default": "Production",
+                "description": "Name of the departement"
+            },
+            "department_id": {
+                "$ref": "../../schemas/identifier.json#/Identifier",
+                "description": "The unique identifier of the poste departement id"
+            }
+        }
+    }
+}

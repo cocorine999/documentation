@@ -1,0 +1,63 @@
+{
+    "InternalServerError": {
+        "description": "Internal Server Error. An unexpected error occurred while processing the request.",
+        "headers": {
+            "X-RateLimit-Limit": {
+                "$ref": "../../headers/x_ratelimit_limit.json"
+            },
+            "X-RateLimit-Remaining": {
+                "$ref": "../../headers/x_ratelimit_remaining.json"
+            },
+            "Access-Control-Allow-Origin": {
+                "$ref": "../../headers/access_control_allow_origin.json"
+            },
+            "Access-Control-Allow-Methods": {
+                "$ref": "../../headers/access_control_allow_methods.json"
+            },
+            "Access-Control-Allow-Credentials": {
+                "$ref": "../../headers/access_control_allow_credentials.json"
+            },
+            "Access-Control-Max-Age": {
+                "$ref": "../../headers/access_control_max_age.json"
+            },
+            "Access-Control-Allow-Headers": {
+                "$ref": "../../headers/access_control_allow_headers.json"
+            }
+        },
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "boolean",
+                            "description": "Indicates whether the request was unsuccessful.",
+                            "default": false,
+                            "example": false
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "A brief description of the error, if any.",
+                            "nullable": true,
+                            "default": null,
+                            "example": "Internal Server Error occurred while processing the request."
+                        },
+                        "errors": {
+                            "type": "string",
+                            "description": "Additional information about the error, if available.",
+                            "nullable": true,
+                            "default": null,
+                            "example": null
+                        },
+                        "status_code": {
+                            "type": "integer",
+                            "description": "The HTTP status code indicating an unexpected error occurred on the server while processing the request.",
+                            "default": 500,
+                            "example": 500
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

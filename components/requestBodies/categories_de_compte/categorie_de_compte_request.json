@@ -1,0 +1,17 @@
+{
+    "CategorieDeCompteRequest": {
+        "type": "object",
+        "required": [
+            "name"
+        ],
+        "properties": {
+            "name": {
+                "type": "string",
+                "nullable": false,
+                "example": "{{$randomBsNoun}}",
+                "default": "Tresorie passif",
+                "description": "Nom de la categorie de compte"
+            }
+        }
+    }
+}

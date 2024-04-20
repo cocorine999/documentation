@@ -1,0 +1,127 @@
+{
+    "summary": "Detach existing plan comptable accounts",
+    "description": "Detach existing plan comptable accounts.",
+    "operationId": "detachAccounts",
+    "parameters": [
+        {
+            "$ref": "../../../components/parameters/plan_comptable_id.json#/PlanComptableId"
+        },
+        {
+            "$ref": "../../../components/headers/content_type.json"
+        },
+        {
+            "$ref": "../../../components/headers/accept.json"
+        },
+        {
+            "$ref": "../../../components/headers/origin.json"
+        }
+    ],
+    "requestBody": {
+        "required": true,
+        "content": {
+            "application/json": {
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "comptes": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                                "minLength": 32,
+                                "maxLength": 36,
+                                "example": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                                "description": "UUID unique d'un compte"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "responses": {
+        "200": {
+            "description": "Successfully retrieved account",
+            "headers": {
+                "X-RateLimit-Limit": {
+                    "$ref": "../../../components/headers/x_ratelimit_limit.json"
+                },
+                "X-RateLimit-Remaining": {
+                    "$ref": "../../../components/headers/x_ratelimit_remaining.json"
+                },
+                "Access-Control-Allow-Origin": {
+                    "$ref": "../../../components/headers/access_control_allow_origin.json"
+                },
+                "Access-Control-Allow-Methods": {
+                    "$ref": "../../../components/headers/access_control_allow_methods.json"
+                },
+                "Access-Control-Allow-Credentials": {
+                    "$ref": "../../../components/headers/access_control_allow_credentials.json"
+                },
+                "Access-Control-Max-Age": {
+                    "$ref": "../../../components/headers/access_control_max_age.json"
+                },
+                "Access-Control-Allow-Headers": {
+                    "$ref": "../../../components/headers/access_control_allow_headers.json"
+                }
+            },
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "boolean",
+                                "description": "Indicates the success status of the request.",
+                                "default": true,
+                                "example": true
+                            },
+                            "message": {
+                                "type": "string",
+                                "description": "Additional information about the response.",
+                                "default": "Accounts detached successfully from the plan comptable.",
+                                "example": "Accounts detached successfully from the plan comptable."
+                            },
+                            "data": {
+                                "type": "boolean",
+                                "description": "Indicates the success status of the request.",
+                                "default": true,
+                                "example": true
+                            },
+                            "status_code": {
+                                "type": "integer",
+                                "description": "Indicates the HTTP status code of the response.",
+                                "default": 200,
+                                "example": 200
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "400": {
+            "$ref": "../../../components/responses/errors/400.json#BadRequest"
+        },
+        "401": {
+            "$ref": "../../../components/responses/errors/401.json#Unauthorized"
+        },
+        "403": {
+            "$ref": "../../../components/responses/errors/403.json#Forbidden"
+        },
+        "404": {
+            "$ref": "../../../components/responses/errors/404.json#NotFound"
+        },
+        "405": {
+            "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
+        },
+        "408": {
+            "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
+        },
+        "500": {
+            "$ref": "../../../components/responses/errors/500.json#InternalServerError"
+        },
+        "503": {
+            "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
+        }
+    }
+}

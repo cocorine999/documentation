@@ -1,0 +1,26 @@
+{
+    "CategorieDeCompte": {
+        "type": "object",
+        "required": [
+            "id",
+            "name"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the categorie de compte"
+            },
+            "name": {
+                "type": "string",
+                "nullable": false,
+                "example": "Revenue",
+                "default": "Tresorie passif",
+                "description": "Nom de la categorie de compte"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the categorie de compte was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

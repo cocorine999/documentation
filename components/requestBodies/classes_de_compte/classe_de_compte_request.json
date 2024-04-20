@@ -1,0 +1,24 @@
+{
+    "ClasseDeCompteRequest": {
+        "type": "object",
+        "required": [
+            "intitule",
+            "class_number"
+        ],
+        "properties": {
+            "intitule": {
+                "type": "string",
+                "nullable": false,
+                "example": "{{$randomBsNoun}}",
+                "default": "Compte des capitaux",
+                "description": "Intitule of the classe de compte"
+            },
+            "class_number": {
+                "type": "integer",
+                "example": "{{$randomInt}}",
+                "default": 1,
+                "description": "Numero de la classe de compte"
+            }
+        }
+    }
+}
