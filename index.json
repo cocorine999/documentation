@@ -1974,6 +1974,104 @@
                 "$ref": "paths/journaux/delete_journal.json"
             }
         },
+        "/plans_comptable": {
+            "get": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/list_plans_comptable.json"
+            },
+            "post": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/create_plan_comptable.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}": {
+            "get": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/find_plan_comptable.json"
+            },
+            "put": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/update_plan_comptable.json"
+            },
+            "delete": {
+                "tags": [
+                    "Plans Comptable"
+                ],
+                "$ref": "paths/plans_comptable/delete_plan_comptable.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/accounts": {
+            "get": {
+                "tags": [
+                    "ListOfPlanComptableAccounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/list_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/attach-accounts": {
+            "put": {
+                "tags": [
+                    "AttachAccountsToPlanComptable"
+                ],
+                "$ref": "paths/plans_comptable/accounts/attach_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/update-accounts": {
+            "patch": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/update_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/detach-accounts": {
+            "patch": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/detach_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/accounts/{accountId}/sub-accounts": {
+            "get": {
+                "tags": [
+                    "ListOfPlanComptableAccountSubAccounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/sub_accounts/list.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/accounts/{accountId}/attach-sub-accounts-to-an-account": {
+            "put": {
+                "tags": [
+                    "AttachAccountsToPlanComptable"
+                ],
+                "$ref": "paths/plans_comptable/accounts/sub_accounts/attach_sub_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/accounts/{accountId}/update-attach-sub-accounts-of-an-account": {
+            "patch": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/sub_accounts/update_sub_accounts.json"
+            }
+        },
+        "/plans_comptable/{planComptableId}/accounts/{accountId}/detach-sub-accounts-from-an-account": {
+            "patch": {
+                "tags": [
+                    "Plan Comptable accounts"
+                ],
+                "$ref": "paths/plans_comptable/accounts/sub_accounts/detach_sub_accounts.json"
+            }
+        },
         "/login": {
             "post": {
                 "summary": "Authentication",
