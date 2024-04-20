@@ -1,9 +1,9 @@
 {
-    "Amount": {
+    "Float": {
         "type": "number",
-        "format": "double",
-        "example": 1500.0,
-        "default": 1500.0,
+        "format": "float",
+        "example": 1.0,
+        "default": 1.0,
         "minimum": 0
     }
 }
