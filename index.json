@@ -131,6 +131,46 @@
             "description": "Permissions",
             "$ref": "paths/permissions.json"
         },
+        "/roles": {
+            "get": {
+                "tags": [
+                    "Roles"
+                ],
+                "$ref": "paths/roles/list_role.json"
+            },
+            "post": {
+                "tags": [
+                    "Roles"
+                ],
+                "$ref": "paths/roles/create_role.json"
+            }
+        },
+        "/roles/{roleId}": {
+            "get": {
+                "tags": [
+                    "Roles"
+                ],
+                "$ref": "paths/roles/find_role.json"
+            },
+            "put": {
+                "tags": [
+                    "Roles"
+                ],
+                "$ref": "paths/roles/update_role.json"
+            },
+            "delete": {
+                "tags": [
+                    "Roles"
+                ],
+                "$ref": "paths/roles/delete_role.json"
+            }
+        },
+        "/roles/{roleId}/grant-access": {
+            "$ref": "paths/roles/grant_access.json"
+        },
+        "/roles/{roleId}/revoke-access": {
+            "$ref": "paths/roles/revoke_access.json"
+        },
         "/departements": {
             "get": {
                 "tags": [
