@@ -2132,6 +2132,20 @@
                 "$ref": "paths/exercices_comptable/cloture.json"
             }
         },
+        "/exercices_comptable/{exerciceComptableId}/ecritures-comptable": {
+            "get": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/ecritures_comptable/entries.json"
+            },
+            "put": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/ecritures_comptable/suivi.json"
+            }
+        },
         "/login": {
             "post": {
                 "summary": "Authentication",
