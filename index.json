@@ -2119,6 +2119,14 @@
                 "$ref": "paths/exercices_comptable/balance.json"
             }
         },
+        "/exercices_comptable/{exerciceComptableId}/journals": {
+            "get": {
+                "tags": [
+                    "Journaux"
+                ],
+                "$ref": "paths/exercices_comptable/journals.json"
+            }
+        },
         "/login": {
             "post": {
                 "summary": "Authentication",
