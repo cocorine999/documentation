@@ -2111,6 +2111,14 @@
                 "$ref": "paths/exercices_comptable/report.json"
             }
         },
+        "/exercices_comptable/{exerciceComptableId}/balance-des-comptes": {
+            "put": {
+                "tags": [
+                    "Balance des comptes d'une periode d'exercice."
+                ],
+                "$ref": "paths/exercices_comptable/balance.json"
+            }
+        },
         "/login": {
             "post": {
                 "summary": "Authentication",
