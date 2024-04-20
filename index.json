@@ -2194,6 +2194,40 @@
                 "$ref": "paths/exercices_comptable/operations_analytique/suivi.json"
             }
         },
+        "/exercices_comptable/{exerciceComptableId}/immobilisations": {
+            "get": {
+                "tags": [
+                    "Immobilisations"
+                ],
+                "$ref": "paths/immobilisations/list.json"
+            },
+            "post": {
+                "tags": [
+                    "Immobilisations"
+                ],
+                "$ref": "paths/immobilisations/create_immobilisation.json"
+            }
+        },
+        "/exercices_comptable/{exerciceComptableId}/immobilisations/{immobilisationId}": {
+            "get": {
+                "tags": [
+                    "Immobilisations"
+                ],
+                "$ref": "paths/immobilisations/find_immobilisation.json"
+            },
+            "put": {
+                "tags": [
+                    "Immobilisations"
+                ],
+                "$ref": "paths/immobilisations/update_immobilisation.json"
+            },
+            "delete": {
+                "tags": [
+                    "Immobilisations"
+                ],
+                "$ref": "paths/immobilisations/delete_immobilisation.json"
+            }
+        },
         "/projets_production": {
             "get": {
                 "tags": [
