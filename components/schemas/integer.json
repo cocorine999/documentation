@@ -1,5 +1,5 @@
 {
-    "Integer": {
+    "Integ": {
         "type": "integer",
         "format": "integer",
         "example": 1,
