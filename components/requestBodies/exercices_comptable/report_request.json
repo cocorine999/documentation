@@ -1,0 +1,36 @@
+{
+    "ReportRequest": {
+        "type": "object",
+        "required": [
+            "accounts"
+        ],
+        "properties": {
+            "accounts": {
+                "type": "array",
+                "items": {
+                    "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest",
+                    "sub_accounts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest"
+                        }
+                    }
+                },
+                "example": {
+                    "accounts" : [
+                        {
+                            "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest"
+                        },
+                        {
+                            "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest"
+                        },
+                        {
+                            "$ref": "../plans_comptable/account_report_request.json#/AccountReportRequest"
+                        }
+                    ]
+                }
+                
+            }
+        }
+    }
+}

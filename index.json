@@ -2072,6 +2072,40 @@
                 "$ref": "paths/plans_comptable/accounts/sub_accounts/detach_sub_accounts.json"
             }
         },
+        "/exercices_comptable": {
+            "get": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/list.json"
+            },
+            "post": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/create_exercice_comptable.json"
+            }
+        },
+        "/exercices_comptable/{exerciceComptableId}": {
+            "get": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/find_exercice_comptable.json"
+            },
+            "put": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/update_exercice_comptable.json"
+            },
+            "delete": {
+                "tags": [
+                    "Exercices comptable"
+                ],
+                "$ref": "paths/exercices_comptable/delete_exercice_comptable.json"
+            }
+        },
         "/login": {
             "post": {
                 "summary": "Authentication",
