@@ -124,6 +124,7 @@
         }
     ],
     "paths": {
+        
         "/departements": {
             "get": {
                 "tags": [
