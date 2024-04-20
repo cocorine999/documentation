@@ -2165,7 +2165,7 @@
         "/exercices_comptable/{exerciceComptableId}/validate_operations_comptable_disponible/{operationComptableId}": {
             "put": {
                 "tags": [
-                    "Suivi comptable"
+                    "Validate suivi comptable"
                 ],
                 "$ref": "paths/exercices_comptable/operations_comptable_disponible/validate.json"
             }
@@ -2174,13 +2174,13 @@
         "/exercices_comptable/{exerciceComptableId}/ecritures-analytique": {
             "get": {
                 "tags": [
-                    "Exercices analytique"
+                    "Ecritures analytique"
                 ],
                 "$ref": "paths/exercices_comptable/ecritures_analytique/ecritures_analytique.json"
             },
             "put": {
                 "tags": [
-                    "Exercices analytique"
+                    "Ecritures analytique"
                 ],
                 "$ref": "paths/exercices_comptable/ecritures_analytique/new_entry.json"
             }
@@ -2189,7 +2189,7 @@
         "/exercices_comptable/{exerciceComptableId}/operations-analytique": {
             "get": {
                 "tags": [
-                    "Operations comptable"
+                    "Operations analytique"
                 ],
                 "$ref": "paths/exercices_comptable/operations_analytique/entries.json"
             }
@@ -2197,9 +2197,17 @@
         "/exercices_comptable/{exerciceComptableId}/suivi-analytique": {
             "put": {
                 "tags": [
-                    "Suivi comptable"
+                    "Suivi Analytique"
                 ],
                 "$ref": "paths/exercices_comptable/operations_analytique/suivi.json"
+            }
+        },
+        "/exercices_comptable/{exerciceComptableId}/validate_operations_analytique/{operationAnalytiqueId}": {
+            "put": {
+                "tags": [
+                    "Validate suivi analytique"
+                ],
+                "$ref": "paths/exercices_comptable/operations_comptable_disponible/validate.json"
             }
         },
         "/exercices_comptable/{exerciceComptableId}/immobilisations": {
