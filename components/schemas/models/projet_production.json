@@ -1,0 +1,59 @@
+{
+    "ProjetProduction": {
+        "type": "object",
+        "required": [
+            "id",
+            "intitule",
+            "date_debut",
+            "date_fin"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the exercice comptable"
+            },
+            "intitule": {
+                "type": "string",
+                "description": "Intitule du projet",
+                "example": "{{$randomProductName}}"
+            },
+            "description": {
+                "type": "string",
+                "description": "Description du projet",
+                "example": "{{$randomProductName}}"
+            },
+            "date_debut": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-06",
+                "example": "{{$randomDateRecent}}",
+                "description": "Date de debut du projet"
+            },
+            "date_fin": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-06",
+                "example": "{{$randomDateRecent}}",
+                "description": "Date fin du projet"
+            },
+            "ligne": {
+                "type": "string",
+                "description": "Ligne de production",
+                "example": "{{$randomProductName}}",
+                "default": "Ligne 1"
+            },
+            "produit_fini": {
+                "type": "string",
+                "description": "article",
+                "example": "{{$randomProductName}}",
+                "default": "Jus d'ananas"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the exercice comptable was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "ProjetProductionRequest": {
+        "type": "object",
+        "required": [
+            "intitule",
+            "date_debut",
+            "date_fin",
+            "ligne_de_production_id",
+            "article_id"
+        ],
+        "properties": {
+            "intitule": {
+                "type": "string",
+                "description": "Intitule du projet",
+                "example": "{{$randomProductName}}"
+            },
+            "description": {
+                "type": "string",
+                "description": "Description du projet",
+                "example": "{{$randomProductName}}"
+            },
+            "date_debut": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-06",
+                "example": "{{$randomDateRecent}}",
+                "description": "Date de debut du projet"
+            },
+            "date_fin": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "default": "2024-01-06",
+                "example": "{{$randomDateRecent}}",
+                "description": "Date fin du projet"
+            },
+            "ligne_de_production_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "{{$randomUUID}}",
+                "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique de la ligne de production",
+                "nullable": false
+            },
+            "article_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "{{$randomUUID}}",
+                "default": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "UUID unique de l'article a produit article",
+                "nullable": false
+            }
+        }
+    }
+}
