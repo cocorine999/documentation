@@ -2163,6 +2163,21 @@
             }
         },
 
+        "/exercices_comptable/{exerciceComptableId}/ecritures-analytique": {
+            "get": {
+                "tags": [
+                    "Exercices analytique"
+                ],
+                "$ref": "paths/exercices_comptable/ecritures_analytique/ecritures_analytique.json"
+            },
+            "put": {
+                "tags": [
+                    "Exercices analytique"
+                ],
+                "$ref": "paths/exercices_comptable/ecritures_analytique/new_entry.json"
+            }
+        },
+
         "/exercices_comptable/{exerciceComptableId}/operations-analytique": {
             "get": {
                 "tags": [
