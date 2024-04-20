@@ -7,12 +7,6 @@
             "$ref": "../../components/parameters/exercice_comptable_id.json#/ExerciceComptableId"
         },
         {
-            "$ref": "../../components/parameters/page.json"
-        },
-        {
-            "$ref": "../../components/parameters/per_page.json"
-        },
-        {
             "$ref": "../../../components/parameters/sort.json"
         },
         {
@@ -73,7 +67,7 @@
                                 "type": "array",
                                 "description": "Journals of exercice comptable.",
                                 "items": {
-                                    "$ref": "../../components/schemas/models/journal.json#/Jou"
+                                    "$ref": "../../components/schemas/models/journal.json#/Journal"
                                 }
                             },
                             "status_code": {
@@ -84,29 +78,6 @@
                             }
                         }
                     }
-                }
-            },
-            "links": {
-                "GetExerciceComptableDetailsByExerciceComptableId": {
-                    "operationId": "getExerciceComptable",
-                    "parameters": {
-                        "exerciceComptableId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to get exercice comptable information based on exercice comptable ID."
-                },
-                "UpdateExerciceComptableDetailsByExerciceComptableId": {
-                    "operationId": "updateExerciceComptable",
-                    "parameters": {
-                        "exerciceComptableId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to update exercice comptable information based on exercice comptable ID."
-                },
-                "DeleteExerciceComptableByExerciceComptableId": {
-                    "operationId": "deleteExerciceComptable",
-                    "parameters": {
-                        "exerciceComptableId": "$response.body#/data/data/0/id"
-                    },
-                    "description": "Link to delete exercice comptable based on exercice comptable ID."
                 }
             }
         },
