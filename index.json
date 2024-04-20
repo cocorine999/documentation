@@ -969,7 +969,6 @@
                 "$ref": "paths/departements/delete_departement.json"
             }
         },
-        
         "/postes": {
             "get": {
                 "tags": [
@@ -1012,6 +1011,778 @@
         },
         "/postes/{posteId}/detach-salaries": {
             "$ref": "paths/postes/detach_salaries.json"
+        },
+        "/categories_of_employees": {
+            "get": {
+                "summary": "Retrieve categories of employees",
+                "description": "Retrieves categories of employees information based on certain criteria.",
+                "parameters": [
+                    {
+                        "$ref": "components/parameters/page.json"
+                    },
+                    {
+                        "$ref": "components/parameters/per_page.json"
+                    },
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "current_page": {
+                                                    "type": "integer",
+                                                    "description": "The current page number.",
+                                                    "default": 1,
+                                                    "minimum": 1,
+                                                    "example": 1
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "description": "Additional information about the response.",
+                                                    "items": {
+                                                        "$ref": "#/components/schemas/CategoryOfEmployee"
+                                                    }
+                                                },
+                                                "links": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "url": {
+                                                                "type": "string",
+                                                                "description": "The URL of the page.",
+                                                                "nullable": true
+                                                            },
+                                                            "label": {
+                                                                "type": "string",
+                                                                "description": "The label of the page.",
+                                                                "nullable": true
+                                                            },
+                                                            "active": {
+                                                                "type": "boolean",
+                                                                "description": "Indicates whether the page is active."
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "description": "The total number of items per page. Defaults to 15.",
+                                                    "default": 15,
+                                                    "example": 36,
+                                                    "minimum": 1
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25.",
+                                                    "default": 15,
+                                                    "example": 15,
+                                                    "minimum": 10,
+                                                    "maximum": 25
+                                                },
+                                                "next_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the next page. Can be null if there is no next page.",
+                                                    "nullable": true
+                                                },
+                                                "prev_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the previous page. Can be null if there is no previous page.",
+                                                    "nullable": true
+                                                },
+                                                "first_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the first page."
+                                                },
+                                                "from": {
+                                                    "type": "integer",
+                                                    "minimum": 1,
+                                                    "default": 1,
+                                                    "example": 1,
+                                                    "description": "The starting index of the data on the current page. Minimum value is 1."
+                                                },
+                                                "last_page": {
+                                                    "type": "integer",
+                                                    "minimum": 1,
+                                                    "default": 1,
+                                                    "example": 1,
+                                                    "description": "The last page number. Minimum value is 3."
+                                                },
+                                                "last_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the last page.",
+                                                    "nullable": true,
+                                                    "default": "{{baseUrl}}/categories_of_employees?page=1",
+                                                    "example": "{{baseUrl}}/categories_of_employees?page=1"
+                                                },
+                                                "path": {
+                                                    "type": "string",
+                                                    "description": "The path of the current page.",
+                                                    "default": "{{baseUrl}}/categories_of_employees",
+                                                    "example": "{{baseUrl}}/categories_of_employees"
+                                                },
+                                                "to": {
+                                                    "type": "integer",
+                                                    "description": "The ending index of the data on the current page. Example value is 2. Can be null.",
+                                                    "example": 2,
+                                                    "default": 1,
+                                                    "nullable": true
+                                                }
+                                            }
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "enum": [
+                                                200,
+                                                201,
+                                                204
+                                            ],
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Retrieve categories of employees",
+                "description": "Retrieves categories of employees information based on certain criteria.",
+                "parameters": [
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Create a new categories of employees in the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "description": "Indicates whether the request was successful.",
+                                "$ref": "#/components/schemas/CategoryOfEmployeeRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "data": {
+                                            "type": "object",
+                                            "$ref": "#/components/schemas/CategoryOfEmployee",
+                                            "description": "Additional information about the response."
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "default": 201,
+                                            "example": 201
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories_of_employees/{categoryOfEmployeeId}": {
+            "get": {
+                "summary": "Retrieve a category of employee",
+                "description": "Retrieve category of employee information based on certain criteria.",
+                "parameters": [
+                    {
+                        "name": "categoryOfEmployeeId",
+                        "description": "The unique identifier of the category of employee",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/Identifier"
+                        }
+                    },
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "data": {
+                                            "description": "Additional information about the response.",
+                                            "$ref": "#/components/schemas/CategoryOfEmployee"
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a category of employee",
+                "description": "Update category of employee information based on certain criteria.",
+                "parameters": [
+                    {
+                        "name": "categoryOfEmployeeId",
+                        "description": "The unique identifier of the category of employee",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/Identifier"
+                        }
+                    },
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update new category of employee in the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "description": "Indicates whether the request was successful.",
+                                "$ref": "#/components/schemas/CategoryOfEmployeeRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/CategoryOfEmployee",
+                                            "description": "Additional information about the response.",
+                                            "example": true
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "default": 201,
+                                            "example": 201
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a category of employee",
+                "description": "Delete category of employee information based on certain criteria.",
+                "parameters": [
+                    {
+                        "name": "categoryOfEmployeeId",
+                        "description": "The unique identifier of the category of employee",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/Identifier"
+                        }
+                    },
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "data": {
+                                            "description": "Additional information about the response.",
+                                            "type": "boolean",
+                                            "nullable": true,
+                                            "default": null,
+                                            "example": null
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories_of_employees/{categoryOfEmployeeId}/taux": {
+            "get": {
+                "summary": "Retrieve category of employee taux.",
+                "description": "Retrieve category of employee taux.",
+                "parameters": [
+                    {
+                        "name": "categoryOfEmployeeId",
+                        "description": "The unique identifier of the user.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/Identifier"
+                        }
+                    },
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": false
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Additional information about the response.",
+                                            "nullable": true,
+                                            "example": null
+                                        },
+                                        "data": {
+                                            "properties": {
+                                                "current_page": {
+                                                    "type": "integer",
+                                                    "description": "The current page number.",
+                                                    "default": 1,
+                                                    "minimum": 1,
+                                                    "example": 1
+                                                },
+                                                "data": {
+                                                    "type": "array",
+                                                    "description": "Additional information about the response.",
+                                                    "items": {
+                                                        "$ref": "#/components/schemas/Taux"
+                                                    }
+                                                },
+                                                "links": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "url": {
+                                                                "type": "string",
+                                                                "description": "The URL of the page.",
+                                                                "nullable": true
+                                                            },
+                                                            "label": {
+                                                                "type": "string",
+                                                                "description": "The label of the page.",
+                                                                "nullable": true
+                                                            },
+                                                            "active": {
+                                                                "type": "boolean",
+                                                                "description": "Indicates whether the page is active."
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "total": {
+                                                    "type": "integer",
+                                                    "description": "The total number of items per page. Defaults to 15.",
+                                                    "default": 15,
+                                                    "example": 36,
+                                                    "minimum": 1
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "description": "The total number of items available per page. Defaults to 15, with a minimum of 10 and a maximum of 25.",
+                                                    "default": 15,
+                                                    "example": 15,
+                                                    "minimum": 10,
+                                                    "maximum": 25
+                                                },
+                                                "next_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the next page. Can be null if there is no next page.",
+                                                    "nullable": true
+                                                },
+                                                "prev_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the previous page. Can be null if there is no previous page.",
+                                                    "nullable": true
+                                                },
+                                                "first_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the first page."
+                                                },
+                                                "from": {
+                                                    "type": "integer",
+                                                    "minimum": 1,
+                                                    "default": 1,
+                                                    "example": 1,
+                                                    "description": "The starting index of the data on the current page. Minimum value is 1."
+                                                },
+                                                "last_page": {
+                                                    "type": "integer",
+                                                    "minimum": 1,
+                                                    "default": 1,
+                                                    "example": 1,
+                                                    "description": "The last page number. Minimum value is 3."
+                                                },
+                                                "last_page_url": {
+                                                    "type": "string",
+                                                    "description": "The URL of the last page.",
+                                                    "nullable": true,
+                                                    "default": "{{baseUrl}}/roles?page=1",
+                                                    "example": "{{baseUrl}}/roles?page=1"
+                                                },
+                                                "path": {
+                                                    "type": "string",
+                                                    "description": "The path of the current page.",
+                                                    "default": "{{baseUrl}}/roles",
+                                                    "example": "{{baseUrl}}/roles"
+                                                },
+                                                "to": {
+                                                    "type": "integer",
+                                                    "description": "The ending index of the data on the current page. Example value is 2. Can be null.",
+                                                    "example": 2,
+                                                    "default": 1,
+                                                    "nullable": true
+                                                }
+                                            }
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories_of_employees/{categoryOfEmployeeId}/attach-taux": {
+            "put": {
+                "summary": "Attach taux to a category of employees.",
+                "description": "Attach taux to a category of employees.",
+                "parameters": [
+                    {
+                        "name": "categoryOfEmployeeId",
+                        "description": "The unique identifier of the user.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/Identifier"
+                        }
+                    },
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update new user in the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "taux": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "taux_id": {
+                                                    "$ref": "#/components/schemas/Identifier",
+                                                    "description": ""
+                                                },
+                                                "est_le_taux_de_base": {
+                                                    "type": "boolean",
+                                                    "default": false,
+                                                    "example": false
+                                                }
+                                            }
+                                        },
+                                        "description": "UUID unique au sein de notre systeme"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Access granted to user successfully.",
+                                            "nullable": true,
+                                            "example": "Access granted to user successfully.",
+                                            "default": "Access granted to user successfully."
+                                        },
+                                        "data": {
+                                            "type": "boolean",
+                                            "description": "",
+                                            "nullable": true,
+                                            "example": true,
+                                            "default": true
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "description": "",
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories_of_employees/{categoryOfEmployeeId}/revoke-taux": {
+            "patch": {
+                "summary": "Revoke taux from category of employees.",
+                "description": "Revoke roles from user.",
+                "parameters": [
+                    {
+                        "name": "categoryOfEmployeeId",
+                        "description": "The unique identifier of the user.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/Identifier"
+                        }
+                    },
+                    {
+                        "$ref": "components/headers/origin.json"
+                    },
+                    {
+                        "$ref": "components/headers/content_type.json"
+                    },
+                    {
+                        "$ref": "components/headers/accept.json"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Update new user in the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "taux": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "taux_id": {
+                                                    "$ref": "#/components/schemas/Identifier",
+                                                    "description": ""
+                                                },
+                                                "est_le_taux_de_base": {
+                                                    "type": "boolean",
+                                                    "default": false,
+                                                    "example": false
+                                                }
+                                            }
+                                        },
+                                        "description": "UUID unique au sein de notre systeme"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "description": "Indicates whether the request was successful.",
+                                            "default": true,
+                                            "example": true
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Access granted to user successfully.",
+                                            "nullable": true,
+                                            "example": "Access granted to user successfully.",
+                                            "default": "Access granted to user successfully."
+                                        },
+                                        "data": {
+                                            "type": "boolean",
+                                            "description": "",
+                                            "nullable": true,
+                                            "example": true,
+                                            "default": true
+                                        },
+                                        "status_code": {
+                                            "type": "integer",
+                                            "description": "",
+                                            "default": 200,
+                                            "example": 200
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
