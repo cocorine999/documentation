@@ -2127,6 +2127,11 @@
                 "$ref": "paths/exercices_comptable/journals.json"
             }
         },
+        "/exercices_comptable/{exerciceComptableId}/cloture": {
+            "get": {
+                "$ref": "paths/exercices_comptable/cloture.json"
+            }
+        },
         "/login": {
             "post": {
                 "summary": "Authentication",
