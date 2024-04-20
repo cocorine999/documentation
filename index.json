@@ -124,7 +124,13 @@
         }
     ],
     "paths": {
-        
+        "/permissions": {
+            "tags": [
+                "Permissions"
+            ],
+            "description": "Permissions",
+            "$ref": "paths/permissions.json"
+        },
         "/departements": {
             "get": {
                 "tags": [
