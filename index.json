@@ -2106,6 +2106,11 @@
                 "$ref": "paths/exercices_comptable/delete_exercice_comptable.json"
             }
         },
+        "/exercices_comptable/{exerciceComptableId}/report-des-soldes-aux-comptes": {
+            "put": {
+                "$ref": "paths/exercices_comptable/report.json"
+            }
+        },
         "/login": {
             "post": {
                 "summary": "Authentication",
