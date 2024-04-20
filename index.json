@@ -2162,6 +2162,14 @@
                 "$ref": "paths/exercices_comptable/operations_comptable_disponible/suivi.json"
             }
         },
+        "/exercices_comptable/{exerciceComptableId}/validate_operations_comptable_disponible/{operationComptableId}": {
+            "put": {
+                "tags": [
+                    "Suivi comptable"
+                ],
+                "$ref": "paths/exercices_comptable/operations_comptable_disponible/validate.json"
+            }
+        },
 
         "/exercices_comptable/{exerciceComptableId}/ecritures-analytique": {
             "get": {
