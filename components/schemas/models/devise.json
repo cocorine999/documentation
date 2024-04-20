@@ -1,0 +1,34 @@
+{
+    "Devise": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "symbol"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the devise"
+            },
+            "name": {
+                "type": "string",
+                "nullable": false,
+                "example": "Franc CFA",
+                "default": "Franc CFA",
+                "description": "Name of the devise"
+            },
+            "symbol": {
+                "type": "string",
+                "nullable": false,
+                "example": "xof",
+                "default": "xof",
+                "description": "Symbol de la devise"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the devise was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

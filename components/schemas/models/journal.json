@@ -1,0 +1,30 @@
+{
+    "Journal": {
+        "type": "object",
+        "required": [
+            "id",
+            "code",
+            "name"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the devise"
+            },
+            "code": {
+                "type": "string",
+                "default": "JV_Vente",
+                "description": "Journal code"
+            },
+            "name": {
+                "type": "string",
+                "default": "Production",
+                "description": "Name of the journal"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the devise was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}
