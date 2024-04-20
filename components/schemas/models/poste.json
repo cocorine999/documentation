@@ -1,0 +1,33 @@
+{
+    "Poste": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "departement_name"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the poste"
+            },
+            "name": {
+                "type": "string",
+                "example": "Comptable",
+                "default": "Comptable",
+                "description": "Name of the poste"
+            },
+            "departement_name": {
+                "type": "string",
+                "readOnly": true,
+                "example": "Finance",
+                "default": "Finance",
+                "description": "Poste departement name"
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the poste was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}
