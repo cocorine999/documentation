@@ -4,11 +4,15 @@
         "properties": {
             "name": {
                 "type": "string",
-                "description": "Name of the unit of measurement."
+                "description": "Name of the unit of measurement.",
+                "example": "{{$randomCurrencyName}}",
+                "default": "{{$randomCurrencyName}}"
             },
             "symbol": {
                 "type": "string",
-                "description": "Symbol for the unit of measurement."
+                "description": "Symbol for the unit of measurement.",
+                "example": "{{$randomCurrencySymbol}}",
+                "default": "{{$randomCurrencySymbol}}"
             }
         }
     }

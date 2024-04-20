@@ -198,19 +198,19 @@
                 "description": "Retrieves users information based on certain criteria.",
                 "parameters": [
                     {
-                        "$ref": "../../components/parameters/page.json"
+                        "$ref": "components/parameters/page.json"
                     },
                     {
-                        "$ref": "../../components/parameters/per_page.json"
+                        "$ref": "components/parameters/per_page.json"
                     },
                     {
-                        "$ref": "../components/headers/origin.json"
+                        "$ref": "components/headers/origin.json"
                     },
                     {
-                        "$ref": "../components/headers/content_type.json"
+                        "$ref": "components/headers/content_type.json"
                     },
                     {
-                        "$ref": "../components/headers/accept.json"
+                        "$ref": "components/headers/accept.json"
                     }
                 ],
                 "responses": {
@@ -353,13 +353,13 @@
                 "description": "Store a new user information based on certain criteria.",
                 "parameters": [
                     {
-                        "$ref": "../components/headers/origin.json"
+                        "$ref": "components/headers/origin.json"
                     },
                     {
-                        "$ref": "../components/headers/content_type.json"
+                        "$ref": "components/headers/content_type.json"
                     },
                     {
-                        "$ref": "../components/headers/accept.json"
+                        "$ref": "components/headers/accept.json"
                     }
                 ],
                 "requestBody": {
@@ -427,13 +427,13 @@
                         }
                     },
                     {
-                        "$ref": "../components/headers/origin.json"
+                        "$ref": "components/headers/origin.json"
                     },
                     {
-                        "$ref": "../components/headers/content_type.json"
+                        "$ref": "components/headers/content_type.json"
                     },
                     {
-                        "$ref": "../components/headers/accept.json"
+                        "$ref": "components/headers/accept.json"
                     }
                 ],
                 "responses": {
@@ -486,13 +486,13 @@
                         }
                     },
                     {
-                        "$ref": "../components/headers/origin.json"
+                        "$ref": "components/headers/origin.json"
                     },
                     {
-                        "$ref": "../components/headers/content_type.json"
+                        "$ref": "components/headers/content_type.json"
                     },
                     {
-                        "$ref": "../components/headers/accept.json"
+                        "$ref": "components/headers/accept.json"
                     }
                 ],
                 "requestBody": {
@@ -558,13 +558,13 @@
                         }
                     },
                     {
-                        "$ref": "../components/headers/origin.json"
+                        "$ref": "components/headers/origin.json"
                     },
                     {
-                        "$ref": "../components/headers/content_type.json"
+                        "$ref": "components/headers/content_type.json"
                     },
                     {
-                        "$ref": "../components/headers/accept.json"
+                        "$ref": "components/headers/accept.json"
                     }
                 ],
                 "responses": {
@@ -622,13 +622,13 @@
                         }
                     },
                     {
-                        "$ref": "../components/headers/origin.json"
+                        "$ref": "components/headers/origin.json"
                     },
                     {
-                        "$ref": "../components/headers/content_type.json"
+                        "$ref": "components/headers/content_type.json"
                     },
                     {
-                        "$ref": "../components/headers/accept.json"
+                        "$ref": "components/headers/accept.json"
                     }
                 ],
                 "responses": {
@@ -782,13 +782,13 @@
                         }
                     },
                     {
-                        "$ref": "../components/headers/origin.json"
+                        "$ref": "components/headers/origin.json"
                     },
                     {
-                        "$ref": "../components/headers/content_type.json"
+                        "$ref": "components/headers/content_type.json"
                     },
                     {
-                        "$ref": "../components/headers/accept.json"
+                        "$ref": "components/headers/accept.json"
                     }
                 ],
                 "requestBody": {
@@ -865,13 +865,13 @@
                         }
                     },
                     {
-                        "$ref": "../components/headers/origin.json"
+                        "$ref": "components/headers/origin.json"
                     },
                     {
-                        "$ref": "../components/headers/content_type.json"
+                        "$ref": "components/headers/content_type.json"
                     },
                     {
-                        "$ref": "../components/headers/accept.json"
+                        "$ref": "components/headers/accept.json"
                     }
                 ],
                 "requestBody": {
