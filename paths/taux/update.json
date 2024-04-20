@@ -42,7 +42,6 @@
                                         },
                                         "unite_mesure_id": {
                                             "description": "The unique identifier of the unite de mesure",
-                                            "required": true,
                                             "schema": {
                                                 "$ref": "../../components/schemas/identifier.json#/Identifier"
                                             }
