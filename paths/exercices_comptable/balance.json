@@ -10,6 +10,9 @@
             "$ref": "../../components/parameters/sort.json"
         },
         {
+            "$ref": "../../components/parameters/order.json"
+        },
+        {
             "name": "from_date",
             "in": "query",
             "required": false,
