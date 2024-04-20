@@ -1,6 +1,17 @@
 {
     "get": {
         "summary": "Retrieve all units of work",
+        "parameters": [
+            {
+                "$ref": "../components/headers/origin.json"
+            },
+            {
+                "$ref": "../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../components/headers/accept.json"
+            }
+        ],
         "responses": {
             "200": {
                 "description": "Success",
@@ -163,6 +174,17 @@
     },
     "post": {
         "summary": "Create a new work unit",
+        "parameters": [
+            {
+                "$ref": "../components/headers/origin.json"
+            },
+            {
+                "$ref": "../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../components/headers/accept.json"
+            }
+        ],
         "requestBody": {
             "required": true,
             "content": {

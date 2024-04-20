@@ -32,6 +32,9 @@
                                 "items": {
                                     "type": "object",
                                     "properties": {
+                                        "taux_id": {
+                                            "$ref": "../../components/schemas/identifier.json#/Identifier"
+                                        },
                                         "hint": {
                                             "$ref": "../../components/schemas/float.json#/Float"
                                         },

@@ -2,6 +2,17 @@
     "get": {
         "summary": "Get all units of measurement",
         "description": "Returns the list of all units of measurement registered in the system.",
+        "parameters": [
+            {
+                "$ref": "../components/headers/origin.json"
+            },
+            {
+                "$ref": "../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../components/headers/accept.json"
+            }
+        ],
         "responses": {
             "200": {
                 "description": "Success",
