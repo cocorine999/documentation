@@ -14,7 +14,7 @@
                             "$ref": "../../schemas/float.json#/Float"
                         },
                         "rate": {
-                            "type": "../../schemas/amount.json#/Amount",
+                            "$ref": "../../schemas/amount.json#/Amount",
                             "example": 180000.00,
                             "description": "Hint rate value"
                         },
