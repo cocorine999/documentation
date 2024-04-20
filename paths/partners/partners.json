@@ -1,6 +1,17 @@
 {
     "get": {
         "summary": "Récupérer tous les partenaires",
+        "parameters": [
+            {
+                "$ref": "../../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../../components/headers/accept.json"
+            },
+            {
+                "$ref": "../../components/headers/origin.json"
+            }
+        ],
         "responses": {
             "200": {
                 "description": "Success",
@@ -62,6 +73,17 @@
     },
     "post": {
         "summary": "Créer un nouveau partenaire",
+        "parameters": [
+            {
+                "$ref": "../../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../../components/headers/accept.json"
+            },
+            {
+                "$ref": "../../components/headers/origin.json"
+            }
+        ],
         "requestBody": {
             "required": true,
             "content": {
