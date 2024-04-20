@@ -149,29 +149,6 @@
                             }
                         }
                     }
-                },
-                "links": {
-                    "GetPartnerDetailsById": {
-                        "operationId": "getPartner",
-                        "parameters": {
-                            "partnerId": "$response.body#/data/id"
-                        },
-                        "description": "Link to get partner details based on partner ID."
-                    },
-                    "UpdatePartnerDetailsById": {
-                        "operationId": "updatePartner",
-                        "parameters": {
-                            "partnerId": "$response.body#/data/id"
-                        },
-                        "description": "Link to update partner details based on partner ID."
-                    },
-                    "DeletePartnerById": {
-                        "operationId": "deletePartner",
-                        "parameters": {
-                            "partnerId": "$response.body#/data/id"
-                        },
-                        "description": "Link to delete partner based on partner ID."
-                    }
                 }
             },
             "400": {
