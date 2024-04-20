@@ -1,7 +1,7 @@
 {
     "name": "sort",
     "in": "query",
-    "description": "Sort",
+    "description": "Sort.",
     "required": false,
     "schema": {
         "type": "string",
