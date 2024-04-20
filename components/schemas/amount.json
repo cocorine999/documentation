@@ -1,6 +1,6 @@
 {
     "Amount": {
-        "type": "number",
+        "type": "integer",
         "format": "double",
         "example": 1500.00,
         "default": 1500.00,
