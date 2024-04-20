@@ -1784,6 +1784,26 @@
                 }
             }
         },
+        "/employees": {
+            "$ref": "paths/employees/employees.json"
+        },
+        "/employee/{employee_id}": {
+            "$ref": "paths/employees/employee.json"
+        },
+        "/devises": {
+            "get": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/list_devises.json"
+            },
+            "post": {
+                "tags": [
+                    "Devises"
+                ],
+                "$ref": "paths/devises/create_devise.json"
+            }
+        },
         "/devises/{deviseId}": {
             "get": {
                 "tags": [
@@ -2170,7 +2190,6 @@
                 "$ref": "paths/exercices_comptable/operations_comptable_disponible/validate.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/ecritures-analytique": {
             "get": {
                 "tags": [
