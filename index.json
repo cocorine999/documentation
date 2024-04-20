@@ -2106,32 +2106,6 @@
                 "$ref": "paths/exercices_comptable/delete_exercice_comptable.json"
             }
         },
-        "/exercices_comptable/{exerciceComptableId}/report-des-soldes-aux-comptes": {
-            "put": {
-                "$ref": "paths/exercices_comptable/report.json"
-            }
-        },
-        "/exercices_comptable/{exerciceComptableId}/balance-des-comptes": {
-            "put": {
-                "tags": [
-                    "Balance des comptes d'une periode d'exercice."
-                ],
-                "$ref": "paths/exercices_comptable/balance.json"
-            }
-        },
-        "/exercices_comptable/{exerciceComptableId}/cloture": {
-            "get": {
-                "$ref": "paths/exercices_comptable/cloture.json"
-            }
-        },
-        "/exercices_comptable/{exerciceComptableId}/journals": {
-            "get": {
-                "tags": [
-                    "Journaux"
-                ],
-                "$ref": "paths/exercices_comptable/journals.json"
-            }
-        },
         "/login": {
             "post": {
                 "summary": "Authentication",
