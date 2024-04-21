@@ -2,14 +2,20 @@
     "LigneEcritureComptableRequest": {
         "type": "object",
         "required": [
+            "account_number",
             "montant",
             "type_ecriture_compte"
         ],
         "properties": {
+            "account_number": {
+                "type": "string",
+                "default": "10",
+                "description": "Numero du compte"
+            },
             "montant": {
                 "type": "number",
                 "format": "double",
-                "example": "{{$randomPrice}}",
+                "example": "12000",
                 "default": 6000.00,
                 "description": "Montant"
             },

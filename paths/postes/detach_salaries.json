@@ -22,7 +22,15 @@
             "content": {
                 "application/json": {
                     "schema": {
-                        "$ref": "../../components/requestBodies/postes/poste_salary_request.json#/PosteSalaryRequest"
+                        "type": "object",
+                        "properties": {
+                            "salaries": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "../../components/schemas/identifier.json#/Identifier"
+                                }
+                            }
+                        }
                     }
                 }
             },

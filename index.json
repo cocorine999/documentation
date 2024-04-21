@@ -1688,7 +1688,7 @@
                 }
             }
         },
-        "/categories_of_employees/{categoryOfEmployeeId}/revoke-taux": {
+        "/categories_of_employees/{categoryOfEmployeeId}/detach-taux": {
             "patch": {
                 "summary": "Revoke taux from category of employees.",
                 "description": "Revoke roles from user.",
@@ -1721,18 +1721,7 @@
                                     "taux": {
                                         "type": "array",
                                         "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "taux_id": {
-                                                    "$ref": "#/components/schemas/Identifier",
-                                                    "description": ""
-                                                },
-                                                "est_le_taux_de_base": {
-                                                    "type": "boolean",
-                                                    "default": false,
-                                                    "example": false
-                                                }
-                                            }
+                                            "$ref": "#/components/schemas/Identifier"
                                         },
                                         "description": "UUID unique au sein de notre systeme"
                                     }
@@ -2157,7 +2146,7 @@
             }
         },
         "/exercices_comptable/{exerciceComptableId}/balance-des-comptes": {
-            "put": {
+            "get": {
                 "tags": [
                     "Balance des comptes d'une periode d'exercice."
                 ],
@@ -2441,7 +2430,7 @@
                 }
             }
         },
-        "/auth": {
+        "/user": {
             "get": {
                 "summary": "Retrieve the authenticate user",
                 "description": "Retrieve the details of the authenticate user",

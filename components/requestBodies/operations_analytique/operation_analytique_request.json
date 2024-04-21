@@ -25,7 +25,7 @@
             "montant": {
                 "type": "number",
                 "format": "double",
-                "example": "{{$randomPrice}}",
+                "example": "12000",
                 "default": 6000.00,
                 "description": "Montant"
             },
