@@ -4,7 +4,7 @@
     "description": "Generate an an employee non contractuel invoice.",
     "parameters": [
         {
-            "$ref": "../../../components/parameters/employee_non_contractuel_invoice_id.json#/EmployeeNonContractuelInvoiceId"
+            "$ref": "../../../components/parameters/employee_non_contractuel_id.json#/EmployeeNonContractuelId"
         },
         {
             "$ref": "../../../components/headers/content_type.json"
