@@ -7,7 +7,7 @@
         ],
         "properties": {
             "unite_travaille_id": {
-                "$ref": "../identifier.json#/Identifier",
+                "$ref": "../../../schemas/identifier.json#/Identifier",
                 "description": "Unique identifier for the devise"
             },
             "quantity": {
