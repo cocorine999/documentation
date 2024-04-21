@@ -1662,10 +1662,10 @@
                                         },
                                         "message": {
                                             "type": "string",
-                                            "description": "Access granted to user successfully.",
+                                            "description": "Taux attached to category of employee successfully",
                                             "nullable": true,
-                                            "example": "Access granted to user successfully.",
-                                            "default": "Access granted to user successfully."
+                                            "example": "Taux attached to category of employee successfully",
+                                            "default": "Taux attached to category of employee successfully"
                                         },
                                         "data": {
                                             "type": "boolean",
@@ -1690,8 +1690,8 @@
         },
         "/categories_of_employees/{categoryOfEmployeeId}/detach-taux": {
             "patch": {
-                "summary": "Revoke taux from category of employees.",
-                "description": "Revoke roles from user.",
+                "summary": "Detach taux from category of employees.",
+                "description": "Detach roles from user.",
                 "parameters": [
                     {
                         "name": "categoryOfEmployeeId",
@@ -1747,10 +1747,10 @@
                                         },
                                         "message": {
                                             "type": "string",
-                                            "description": "Access granted to user successfully.",
+                                            "description": "Taux detached to category of employee successfully.",
                                             "nullable": true,
-                                            "example": "Access granted to user successfully.",
-                                            "default": "Access granted to user successfully."
+                                            "example": "Taux detached to category of employee successfully.",
+                                            "default": "Taux detached to category of employee successfully."
                                         },
                                         "data": {
                                             "type": "boolean",
