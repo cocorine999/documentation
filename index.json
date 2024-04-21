@@ -1790,6 +1790,15 @@
         "/employee/{employee_id}": {
             "$ref": "paths/employees/employee.json"
         },
+        "/employeenoncontractuels/{employeeNonContractuelId}/invoices": {
+            "$ref": "paths/employees/invoices/list.json"
+        },
+        "/employeenoncontractuels/{employeeNonContractuelId}/generate-invoice": {
+            "$ref": "paths/employees/invoices/generate.json"
+        },
+        "/employeenoncontractuels/{employeeNonContractuelId}/invoices/{invoiceId}": {
+            "$ref": "paths/employees/invoices/update.json"
+        },
         "/partners": {
             "$ref": "paths/partners/partners.json"
         },

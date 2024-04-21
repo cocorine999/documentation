@@ -13,9 +13,11 @@
                 "description": "Unique identifier for the exercice comptable"
             },
             "montant": {
-                "$ref": "../amount.json#/Amount",
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
                 "default": 6000.00,
-                "description": "Montant"
+                "minimum": 0.00
             },
             "type_ecriture_compte": {
                 "enum": [

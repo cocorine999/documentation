@@ -1,0 +1,55 @@
+{
+    "EmployeeNonContractuelInvoiceItemRequest": {
+        "type": "object",
+        "required": [
+            "quantity",
+            "unite_travaille_id"
+        ],
+        "properties": {
+            "unite_travaille_id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the devise"
+            },
+            "quantity": {
+                "type": "number",
+                "format": "float",
+                "example": 12.3,
+                "default": 2.3,
+                "minimum": 1.00
+            }
+        }
+    },
+    "EmployeeNonContractuelInvoiceItemUpdateRequest": {
+        "type": "object",
+        "required": [
+            "id",
+            "quantity",
+            "unite_travaille_id"
+        ],
+        "properties": {
+            "id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "ID Unique de la ligne de la facture a modifier"
+            },
+            "unite_travaille_id": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{8}-[0-9a-x]{4}-[1-5][0-9a-z]{3}-[89AB][0-9a-q]{3}-[0-9a-f]{12}$",
+                "minLength": 32,
+                "maxLength": 36,
+                "example": "b257f261-9r73-4e4-64d-d733b56fq3af",
+                "description": "ID Unique d'une unite travaille"
+            },
+            "quantity": {
+                "type": "number",
+                "format": "float",
+                "example": 12.3,
+                "default": 2.3,
+                "minimum": 1.00
+            }
+        }
+    }
+}

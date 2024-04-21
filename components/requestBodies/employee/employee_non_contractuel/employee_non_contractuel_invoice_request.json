@@ -1,0 +1,46 @@
+{
+    "EmployeeNonContractuelInvoiceRequest": {
+        "type": "object",
+        "required": [
+            "items"
+        ],
+        "properties": {
+            "due_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date echeance"
+            },
+            "items": {
+                "type": "array",
+                "items":{
+                    "$ref": "employee_non_contractuel_invoice_item_request.json#/EmployeeNonContractuelInvoiceItemRequest"
+                }
+            }
+        }
+    },
+    "EmployeeNonContractuelInvoiceUpdateRequest": {
+        "type": "object",
+        "required": [
+            "items"
+        ],
+        "properties": {
+            "due_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date echeance"
+            },
+            "items": {
+                "type": "array",
+                "items":{
+                    "$ref": "employee_non_contractuel_invoice_item_request.json#/EmployeeNonContractuelInvoiceItemUpdateRequest"
+                }
+            }
+        }
+    }
+}

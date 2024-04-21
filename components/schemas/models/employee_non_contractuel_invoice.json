@@ -1,0 +1,67 @@
+{
+    "EmployeeNonContractuelInvoice": {
+        "type": "object",
+        "required": [
+            "id",
+            "invoice_number",
+            "total",
+            "issue_date",
+            "due_date",
+            "invoice_status",
+            "items"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the devise"
+            },
+            "invoice_number": {
+                "type": "string",
+                "nullable": false,
+                "example": "INV-20240421-00031",
+                "default": "INV-20240421-00001",
+                "description": "The invoice number"
+            },
+            "total": {
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
+                "default": 6000.00,
+                "minimum": 0.00,
+                "description": "The invoice total amount"
+            },
+            "issue_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date de creation de la facture"
+            },
+            "due_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date echeance"
+            },
+            "invoice_status": {
+                "type": "boolean",
+                "example": false,
+                "default": false,
+                "description": "Status de la facture"
+            },
+            "items": {
+                "type": "array",
+                "items":{
+                    "$ref": "employee_non_contractuel_invoice_item.json#/EmployeeNonContractuelInvoiceItem"
+                }
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the devise was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

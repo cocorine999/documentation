@@ -1,0 +1,11 @@
+{
+    "EmployeeNonContractuelInvoiceId": {
+        "name": "invoiceId",
+        "description": "The unique identifier of the employee non contractuel invoice id",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "EmployeeNonContractuelInvoiceItem": {
+        "type": "object",
+        "required": [
+            "id",
+            "quantity",
+            "unit_price",
+            "total"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier"
+            },
+            "quantity": {
+                "type": "number",
+                "format": "float",
+                "example": 2,
+                "default": 2.3,
+                "minimum": 1.00
+            },
+            "unit_price": {
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
+                "default": 600.00,
+                "minimum": 0.00
+            },
+            "total": {
+                "type": "number",
+                "format": "double",
+                "example": "{{$randomPrice}}",
+                "default": 1200.00,
+                "minimum": 0.00
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the devise was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}
