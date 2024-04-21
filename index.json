@@ -1802,8 +1802,7 @@
             }
         },
         "/employeenoncontractuels/{employeeNonContractuelId}/invoices/{invoiceId}": {
-
-            "post": {
+            "put": {
                 "tags": [
                     "Employee non contractuel invoices"
                 ],
