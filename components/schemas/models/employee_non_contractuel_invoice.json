@@ -55,7 +55,7 @@
             "items": {
                 "type": "array",
                 "items":{
-                    "$ref": "employe_invoice.json#/EmployeeNonContractuelInvoiceItem"
+                    "$ref": "employee_non_contractuel_invoice_item.json#/EmployeeNonContractuelInvoiceItem"
                 }
             },
             "created_at": {
