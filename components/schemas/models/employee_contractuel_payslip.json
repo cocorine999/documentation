@@ -89,7 +89,7 @@
             "items": {
                 "type": "array",
                 "items":{
-                    "$ref": "employe_invoice.json#/EmployeeNonContractuelInvoiceItem"
+                    "$ref": "employee_contractuel_payslip_item.json#/EmployeeContractuelPaySlipItem"
                 }
             },
             "created_at": {

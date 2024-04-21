@@ -1,5 +1,5 @@
 {
-    "EmployeeNonContractuelInvoiceItem": {
+    "EmployeeContractuelPaySlipItem": {
         "type": "object",
         "required": [
             "id",
