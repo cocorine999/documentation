@@ -9,7 +9,9 @@ id = 63099e91-ba8e-487c-8bbe-3d3b7c0cf962
 
 [config.relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"33313317-1abfe060-fb65-417b-8d88-16c1de1eaa29","path":"API Documentation.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
+files[] = {"id":"33313317-1abfe060-fb65-417b-8d88-16c1de1eaa29","path":"API Documentation 1.json","metaData":{}}
+files[] = {"id":"33313317-63d5ea8a-84ff-45d0-96de-35d3da6e04ab","path":"API Documentation 2.json","metaData":{}}
+files[] = {"id":"33313317-ecb11759-5990-4b3c-bdd2-d2e52cc86f54","path":"API Documentation.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
