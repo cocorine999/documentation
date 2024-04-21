@@ -1791,12 +1791,7 @@
             "$ref": "paths/employees/employee.json"
         },
         "/employeenoncontractuels/{employeeNonContractuelId}/invoices": {
-            "get": {
-                "tags": [
-                    "Employee non contractuel invoices"
-                ],
-                "$ref": "paths/employees/invoices/list.json"
-            }
+            "$ref": "paths/employees/invoices/list.json"
         },
         "/employeenoncontractuels/{employeeNonContractuelId}/generate-invoice": {
             "post": {
