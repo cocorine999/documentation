@@ -1,0 +1,31 @@
+{
+    "EmployeeNonContractuelInvoiceItem": {
+        "type": "object",
+        "required": [
+            "id",
+            "libelle",
+            "amount"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier"
+            },
+            "libelle": {
+                "type": "string",
+                "example": "Prime de compensation",
+                "default": "Prime de compensation"
+            },
+            "amount": {
+                "type": "number",
+                "format": "double",
+                "example": 600.00,
+                "default": 600.00,
+                "minimum": 0.00
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the devise was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "EmployeeContractuelId": {
+        "name": "employeeContractuelId",
+        "description": "The unique identifier of the employee contractuel",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

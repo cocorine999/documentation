@@ -1,0 +1,11 @@
+{
+    "EmployeeContractuelPaySlipId": {
+        "name": "ficheId",
+        "description": "The unique identifier of the employee contractuel payslip id",
+        "in": "path",
+        "required": true,
+        "schema": {
+            "$ref": "../schemas/identifier.json#/Identifier"
+        }
+    }
+}

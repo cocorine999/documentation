@@ -1,0 +1,101 @@
+{
+    "EmployeeContractuelPaySlip": {
+        "type": "object",
+        "required": [
+            "id",
+            "reference",
+            "issue_date",
+            "periode_date",
+            "start_date",
+            "end_date",
+            "total_hors_taxe",
+            "tva",
+            "ttc",
+            "invoice_status",
+            "items"
+        ],
+        "properties": {
+            "id": {
+                "$ref": "../identifier.json#/Identifier",
+                "description": "Unique identifier for the devise"
+            },
+            "reference": {
+                "type": "string",
+                "nullable": false,
+                "example": "PAY-20240421-00032",
+                "default": "PAY-20240421-00032",
+                "description": "The invoice number"
+            },
+            "issue_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date de creation de la facture"
+            },
+            "periode_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{2}/\\d{2}$",
+                "nullable": false,
+                "example": "01/01",
+                "default": "01/01",
+                "description": "Start date of the period (DD/MM)"
+            },
+            "start_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date echeance"
+            },
+            "end_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date echeance"
+            },
+            "total_hors_taxe": {
+                "type": "number",
+                "format": "double",
+                "example": 600.00,
+                "default": 600.00,
+                "minimum": 0.00
+            },
+            "tva": {
+                "type": "number",
+                "format": "double",
+                "example": 600.00,
+                "default": 600.00,
+                "minimum": 0.00
+            },
+            "ttc": {
+                "type": "number",
+                "format": "double",
+                "example": 600.00,
+                "default": 600.00,
+                "minimum": 0.00
+            },
+            "pay_slip_status": {
+                "type": "boolean",
+                "example": false,
+                "default": false,
+                "description": "Status de la facture"
+            },
+            "items": {
+                "type": "array",
+                "items":{
+                    "$ref": "employe_invoice.json#/EmployeeNonContractuelInvoiceItem"
+                }
+            },
+            "created_at": {
+                "$ref": "../date_format.json#/DateFormat",
+                "description": "Date and time when the devise was created (YYYY-MM-DD HH:MM:SS)"
+            }
+        }
+    }
+}

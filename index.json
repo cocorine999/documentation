@@ -1779,6 +1779,25 @@
         "/employee/{employee_id}": {
             "$ref": "paths/employees/employee.json"
         },
+        "/employees_contractuel/{employeeContractuelId}/fiches-de-paie": {
+            "$ref": "paths/employees/payslips/list.json"
+        },
+        "/employees_contractuel/{employeeContractuelId}/generate-fiche-de-paie": {
+            "post": {
+                "tags": [
+                    "PaySlips"
+                ],
+                "$ref": "paths/employees/payslips/generate.json"
+            }
+        },
+        "/employees_contractuel/{employeeContractuelId}/fiches-de-paie/{ficheId}": {
+            "put": {
+                "tags": [
+                    "PaySlips"
+                ],
+                "$ref": "paths/employees/payslips/update.json"
+            }
+        },
         "/employeenoncontractuels/{employeeNonContractuelId}/invoices": {
             "$ref": "paths/employees/invoices/list.json"
         },

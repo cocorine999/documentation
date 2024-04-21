@@ -1,0 +1,130 @@
+{
+    "EmployeeContractuelPaySlipRequest": {
+        "type": "object",
+        "required": [
+            "items",
+            "periode_date",
+            "start_date",
+            "end_date"
+        ],
+        "properties": {
+            "issue_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date echeance"
+            },
+            "periode_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{2}/\\d{2}$",
+                "nullable": false,
+                "example": "04/22",
+                "default": "01/06",
+                "description": "Periode date"
+            },
+            "start_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Start date"
+            },
+            "end_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "End date"
+            },
+            "tva": {
+                "type": "number",
+                "format": "float",
+                "example": 12000,
+                "default": 12000,
+                "minimum": 1.00,
+                "description": "Tva"
+            },
+            "pay_slip_status": {
+                "type": "boolean",
+                "example": false,
+                "default": false,
+                "description": "Status"
+            },
+            "items": {
+                "type": "array",
+                "items": {
+                    "$ref": "employee_contractuel_payslip_item_request.json#/EmployeeContractuelPaySlipItemRequest"
+                }
+            }
+        }
+    },
+    "EmployeeContractuelPaySlipUpdateRequest": {
+        "type": "object",
+        "required": [
+            "items",
+            "periode_date",
+            "start_date",
+            "end_date"
+        ],
+        "properties": {
+            "issue_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Date echeance"
+            },
+            "periode_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{2}/\\d{2}$",
+                "nullable": false,
+                "example": "04/22",
+                "default": "01/06",
+                "description": "Periode date"
+            },
+            "start_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "Start date"
+            },
+            "end_date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "example": "2024-04-22",
+                "default": "2024-01-06",
+                "description": "End date"
+            },
+            "tva": {
+                "type": "number",
+                "format": "float",
+                "example": 12000,
+                "default": 12000,
+                "minimum": 1.00,
+                "description": "Tva"
+            },
+            "pay_slip_status": {
+                "type": "boolean",
+                "example": false,
+                "default": false,
+                "description": "Status"
+            },
+            "items": {
+                "type": "array",
+                "items": {
+                    "$ref": "employee_contractuel_payslip_item_request.json#/EmployeeContractuelPaySlipItemUpdateRequest"
+                }
+            }
+        }
+    }
+}
