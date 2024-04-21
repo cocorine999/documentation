@@ -3057,7 +3057,8 @@
                         "type": "string",
                         "minLength": 3,
                         "maxLength": 12,
-                        "example": "User identifier",
+                        "default": "johndoe@gmail.com",
+                        "example": "johndoe@gmail.com",
                         "description": "Description du nom du champ of the categories of employees"
                     },
                     "password": {
@@ -3065,6 +3066,7 @@
                         "minLength": 8,
                         "maxLength": 12,
                         "example": "password",
+                        "default": "password",
                         "description": "Description of the categories of employees"
                     }
                 }
