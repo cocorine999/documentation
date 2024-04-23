@@ -1,0 +1,284 @@
+{
+    "get": {
+        "summary": "Get all IQPs",
+        "parameters": [
+            {
+                "$ref": "../../../components/headers/origin.json"
+            },
+            {
+                "$ref": "../../../components/headers/content_type.json"
+            },
+            {
+                "$ref": "../../../components/headers/accept.json"
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Success",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../../components/headers/access_control_max_age.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the query completed successfully for IQPs."
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "nullable": true,
+                                    "description": "Response message, if applicable, for IQPs."
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "../../../components/schemas/models/iqp.json#/IQP"
+                                    },
+                                    "description": "List of Imaginary Quality Products (IQPs)."
+                                },
+                                "current_page": {
+                                    "type": "integer",
+                                    "description": "Current page number for IQPs."
+                                },
+                                "first_page_url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "URL of the first results page for IQPs."
+                                },
+                                "from": {
+                                    "type": "integer",
+                                    "description": "Index of the first entry in the results page for IQPs."
+                                },
+                                "last_page": {
+                                    "type": "integer",
+                                    "description": "Number of the last results page for IQPs."
+                                },
+                                "last_page_url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "URL of the last results page for IQPs."
+                                },
+                                "links": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "url": {
+                                                "type": "string",
+                                                "format": "uri",
+                                                "nullable": true,
+                                                "description": "URL of the linked page for IQPs."
+                                            },
+                                            "label": {
+                                                "type": "string",
+                                                "description": "Link label for IQPs."
+                                            },
+                                            "active": {
+                                                "type": "boolean",
+                                                "description": "Indicates whether the link is active or not for IQPs."
+                                            }
+                                        }
+                                    },
+                                    "description": "Links to other results pages for IQPs."
+                                },
+                                "next_page_url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "nullable": true,
+                                    "description": "URL of the next results page for IQPs."
+                                },
+                                "path": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "description": "Base URL of the request for IQPs."
+                                },
+                                "per_page": {
+                                    "type": "integer",
+                                    "description": "Number of elements per page for IQPs."
+                                },
+                                "prev_page_url": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "nullable": true,
+                                    "description": "URL of the previous results page for IQPs."
+                                },
+                                "to": {
+                                    "type": "integer",
+                                    "description": "Index of the last entry in the results page for IQPs."
+                                },
+                                "total": {
+                                    "type": "integer",
+                                    "description": "Total number of Imaginary Quality Products (IQPs) in the system."
+                                }
+                            }
+                        }
+                    }
+                },
+                "links": {
+                    "GetIQPDetailsById": {
+                        "operationId": "getIQP",
+                        "parameters": {
+                            "iqpId": "$response.body#/data/0/id"
+                        },
+                        "description": "Link to get IQP information based on IQP ID."
+                    },
+                    "UpdateIQPDetailsById": {
+                        "operationId": "updateIQP",
+                        "parameters": {
+                            "iqpId": "$response.body#/data/0/id"
+                        },
+                        "description": "Link to update IQP information based on IQP ID."
+                    },
+                    "DeleteIQPById": {
+                        "operationId": "deleteIQP",
+                        "parameters": {
+                            "iqpId": "$response.body#/data/0/id"
+                        },
+                        "description": "Link to delete IQP based on IQP ID."
+                    }
+                }
+            }
+        }
+    },
+    "post": {
+        "summary": "Create a new imaginary quality product",
+        "requestBody": {
+            "required": true,
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "../../../components/requestBodies/magasins/iqp.json#/IQPInput"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "201": {
+                "description": "Imaginary quality product created successfully.",
+                "headers": {
+                    "X-RateLimit-Limit": {
+                        "$ref": "../../../components/headers/x_ratelimit_limit.json"
+                    },
+                    "X-RateLimit-Remaining": {
+                        "$ref": "../../../components/headers/x_ratelimit_remaining.json"
+                    },
+                    "Access-Control-Allow-Origin": {
+                        "$ref": "../../../components/headers/access_control_allow_origin.json"
+                    },
+                    "Access-Control-Allow-Methods": {
+                        "$ref": "../../../components/headers/access_control_allow_methods.json"
+                    },
+                    "Access-Control-Allow-Credentials": {
+                        "$ref": "../../../components/headers/access_control_allow_credentials.json"
+                    },
+                    "Access-Control-Max-Age": {
+                        "$ref": "../../../components/headers/access_control_max_age.json"
+                    }
+                },
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates the success status of the request.",
+                                    "default": true,
+                                    "example": true
+                                },
+                                "message": {
+                                    "type": "string",
+                                    "description": "Additional information about the response.",
+                                    "default": "IQP created successfully.",
+                                    "example": "IQP created successfully."
+                                },
+                                "data": {
+                                    "$ref": "../../../components/schemas/models/iqp.json#/IQP"
+                                },
+                                "status_code": {
+                                    "type": "integer",
+                                    "description": "Indicates the HTTP status code of the response.",
+                                    "default": 201,
+                                    "example": 201
+                                }
+                            }
+                        }
+                    }
+                },
+                "links": {
+                    "GetIQPDetailsById": {
+                        "operationId": "getIQP",
+                        "parameters": {
+                            "iqpId": "$response.body#/data/0/id"
+                        },
+                        "description": "Link to get IQP information based on IQP ID."
+                    },
+                    "UpdateIQPDetailsById": {
+                        "operationId": "updateIQP",
+                        "parameters": {
+                            "iqpId": "$response.body#/data/0/id"
+                        },
+                        "description": "Link to update IQP information based on IQP ID."
+                    },
+                    "DeleteIQPById": {
+                        "operationId": "deleteIQP",
+                        "parameters": {
+                            "iqpId": "$response.body#/data/0/id"
+                        },
+                        "description": "Link to delete IQP based on IQP ID."
+                    }
+                }
+            },
+            "400": {
+                "$ref": "../../../components/responses/errors/400.json#BadRequest"
+            },
+            "401": {
+                "$ref": "../../../components/responses/errors/401.json#Unauthorized"
+            },
+            "403": {
+                "$ref": "../../../components/responses/errors/403.json#Forbidden"
+            },
+            "404": {
+                "$ref": "../../../components/responses/errors/404.json#NotFound"
+            },
+            "405": {
+                "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
+            },
+            "408": {
+                "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
+            },
+            "422": {
+                "$ref": "../../../components/responses/errors/422.json#UnprocessableEntity"
+            },
+            "429": {
+                "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"
+            },
+            "500": {
+                "$ref": "../../../components/responses/errors/500.json#InternalServerError"
+            },
+            "503": {
+                "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
+            }
+        }
+    }
+}

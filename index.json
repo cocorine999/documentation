@@ -210,6 +210,18 @@
         "/categorie_articles/{categorieArticleId}": {
             "$ref": "paths/articles/categories_articles/categorie.json"
         },
+        "/article_iqps": {
+            "$ref": "paths/magasins/articleIqps/articleIqps.json"
+        },
+        "/article_iqps/{articleIQPId}": {
+            "$ref": "paths/magasins/articleIqps/articleIqp.json"
+        },
+        "/iqps": {
+            "$ref": "paths/magasins/iqps/iqps.json"
+        },
+        "/iqps/{iqpId}": {
+            "$ref": "paths/magasins/iqps/iqp.json"
+        },
         "/users": {
             "get": {
                 "summary": "Retrieve users",

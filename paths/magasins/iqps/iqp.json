@@ -1,9 +1,9 @@
 {
     "get": {
-        "summary": "Retrieve a category article by ID",
+        "summary": "Retrieve an IQP  by ID",
         "parameters": [
             {
-                "name": "categorieArticleId",
+                "name": "iqpId",
                 "in": "path",
                 "required": true,
                 "schema": {
@@ -42,9 +42,6 @@
                     },
                     "Access-Control-Max-Age": {
                         "$ref": "../../../components/headers/access_control_max_age.json"
-                    },
-                    "Access-Control-Allow-Headers": {
-                        "$ref": "../../../components/headers/access_control_allow_headers.json"
                     }
                 },
                 "content": {
@@ -61,11 +58,11 @@
                                 "message": {
                                     "type": "string",
                                     "description": "Additional information about the response.",
-                                    "default": "Category article retrieved successfully",
-                                    "example": "Category article retrieved successfully"
+                                    "default": "IQP retrieved successfully",
+                                    "example": "IQP retrieved successfully"
                                 },
                                 "data": {
-                                    "$ref": "../../../components/schemas/models/categorie_article.json#/CategorieArticle"
+                                    "$ref": "../../../components/schemas/models/iqp.json#/IQP"
                                 },
                                 "status_code": {
                                     "type": "integer",
@@ -78,56 +75,29 @@
                     }
                 },
                 "links": {
-                    "UpdateCategorieDetailsByCategorieId": {
-                        "operationId": "updateCategorie",
+                    "UpdateIQPDetailsByUnitId": {
+                        "operationId": "updateIQP",
                         "parameters": {
-                            "CategorieId": "$response.body#/data/id"
+                            "unitId": "$response.body#/data/id"
                         },
-                        "description": "Link to update category article information based on category article ID."
+                        "description": "Link to update IQP information based on its ID."
                     },
-                    "DeleteCategorieByCategorieId": {
-                        "operationId": "deleteCategorie",
+                    "DeleteIQPByUnitId": {
+                        "operationId": "deleteIQP",
                         "parameters": {
-                            "CategorieId": "$response.body#/data/id"
+                            "unitId": "$response.body#/data/id"
                         },
-                        "description": "Link to delete category article based on category article ID."
+                        "description": "Link to delete IQP based on its ID."
                     }
                 }
-            },
-            "400": {
-                "$ref": "../../../components/responses/errors/400.json#BadRequest"
-            },
-            "401": {
-                "$ref": "../../../components/responses/errors/401.json#Unauthorized"
-            },
-            "403": {
-                "$ref": "../../../components/responses/errors/403.json#Forbidden"
-            },
-            "404": {
-                "$ref": "../../../components/responses/errors/404.json#NotFound"
-            },
-            "405": {
-                "$ref": "../../../components/responses/errors/405.json#MethodNotAllowed"
-            },
-            "408": {
-                "$ref": "../../../components/responses/errors/408.json#RequestTimeout"
-            },
-            "429": {
-                "$ref": "../../../components/responses/errors/429.json#RateLimitExceeded"
-            },
-            "500": {
-                "$ref": "../../../components/responses/errors/500.json#InternalServerError"
-            },
-            "503": {
-                "$ref": "../../../components/responses/errors/503.json#ServiceUnavailable"
             }
         }
     },
     "put": {
-        "summary": "Edit an existing category article",
+        "summary": "Update an IQP  by ID",
         "parameters": [
             {
-                "name": "categorieArticleId",
+                "name": "iqpId",
                 "in": "path",
                 "required": true,
                 "schema": {
@@ -150,14 +120,14 @@
             "content": {
                 "application/json": {
                     "schema": {
-                        "$ref": "../../../components/requestBodies/articles/categorie_articles/categorie_article.json#/CategorieArticleInput"
+                        "$ref": "../../../components/requestBodies/magasins/iqp.json#/IQPInput"
                     }
                 }
             }
         },
         "responses": {
             "201": {
-                "description": "Successful update",
+                "description": "Success",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -176,9 +146,6 @@
                     },
                     "Access-Control-Max-Age": {
                         "$ref": "../../../components/headers/access_control_max_age.json"
-                    },
-                    "Access-Control-Allow-Headers": {
-                        "$ref": "../../../components/headers/access_control_allow_headers.json"
                     }
                 },
                 "content": {
@@ -195,11 +162,11 @@
                                 "message": {
                                     "type": "string",
                                     "description": "Additional information about the response.",
-                                    "default": "Category article updated successfully",
-                                    "example": "Category article updated successfully"
+                                    "default": "Iqp updated successfully",
+                                    "example": "Iqp updated successfully"
                                 },
                                 "data": {
-                                    "$ref": "../../../components/schemas/models/categorie_article.json#/CategorieArticle"
+                                    "$ref": "../../../components/schemas/models/iqp.json#/IQP"
                                 },
                                 "status_code": {
                                     "type": "integer",
@@ -245,10 +212,10 @@
         }
     },
     "delete": {
-        "summary": "Delete an existing category article",
+        "summary": "Delete an IQP  by ID",
         "parameters": [
             {
-                "name": "categorieArticleId",
+                "name": "iqpId",
                 "in": "path",
                 "required": true,
                 "schema": {
@@ -268,7 +235,7 @@
         ],
         "responses": {
             "200": {
-                "description": "Category article deleted with Success",
+                "description": "Success",
                 "headers": {
                     "X-RateLimit-Limit": {
                         "$ref": "../../../components/headers/x_ratelimit_limit.json"
@@ -287,9 +254,6 @@
                     },
                     "Access-Control-Max-Age": {
                         "$ref": "../../../components/headers/access_control_max_age.json"
-                    },
-                    "Access-Control-Allow-Headers": {
-                        "$ref": "../../../components/headers/access_control_allow_headers.json"
                     }
                 },
                 "content": {
@@ -306,8 +270,8 @@
                                 "message": {
                                     "type": "string",
                                     "description": "Additional information about the response.",
-                                    "default": "Category article deleted successfully.",
-                                    "example": "Category article deleted successfully."
+                                    "default": "Iqp deleted successfully.",
+                                    "example": "Iqp deleted successfully."
                                 },
                                 "data": {
                                     "type": "boolean",
