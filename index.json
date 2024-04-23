@@ -192,6 +192,24 @@
         "/unite_travailles/{uniteTravailleId}/remove-taux": {
             "$ref": "paths/taux/delete.json"
         },
+        "/magasins/{magasinId}": {
+            "$ref": "paths/magasins/magasin.json"
+        },
+        "/magasins": {
+            "$ref": "paths/magasins/magasins.json"
+        },
+        "/articles": {
+            "$ref": "paths/articles/articles.json"
+        },
+        "/articles/{articleId}": {
+            "$ref": "paths/articles/article.json"
+        },
+        "/categorie_articles": {
+            "$ref": "paths/articles/categories_articles/categories.json"
+        },
+        "/categorie_articles/{categorieArticleId}": {
+            "$ref": "paths/articles/categories_articles/categorie.json"
+        },
         "/users": {
             "get": {
                 "summary": "Retrieve users",
@@ -2237,7 +2255,6 @@
                 "$ref": "paths/exercices_comptable/ecritures_analytique/new_entry.json"
             }
         },
-
         "/exercices_comptable/{exerciceComptableId}/operations-analytique": {
             "get": {
                 "tags": [

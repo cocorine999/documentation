@@ -1,0 +1,11 @@
+{
+    "CategorieArticleInput": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "New name of the Article category."
+            }
+        }
+    }
+}
